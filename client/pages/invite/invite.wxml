@@ -1,0 +1,28 @@
+<!--invite.wxml 用户邀请别人的界面-->
+
+<view class="bodyView">
+  <!-- <form bindsubmit="matchRequest"> -->
+    <view class='titleView'>一起组队！
+      <image style='width: 90rpx; height: 90rpx;' src='/pages/basketball/ball.png' mode='aspectFill' />
+    </view>
+
+    <view class='funcInfoView'>预计活动时间</view>
+
+     <!-- <view class="timeView" wx:for="{{partyTime}}"wx:key="{{index}}">
+      <text>{{item}}</text>
+    </view>  -->
+    <scroll-view scroll-y	class="timeView">
+      <text class="timeTextView" wx:for="{{showTime}}">{{item}}\n</text>
+    </scroll-view>
+    
+    <view class='location'>
+      <button class="locIcon" bindtap='bindCheckOnGoActivityTap'>
+        <image style='width: 40rpx; height: 40rpx;' src='/pages/basketball/battle.png' mode='aspectFill' /> 查看我的组队
+      </button>
+    </view>
+
+    <button class="teamMateView" open-type="share">
+        <image src='/pages/basketball/invite.png' mode='aspectFill' style='width: 80rpx; height: 80rpx;'></image>
+    </button>
+  <!-- </form> -->
+</view>

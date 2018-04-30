@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/onGoActivity/onGoActivity",        
+    "pages/basketball/basketball",
+    "pages/invite/invite",
+    "pages/accept/accept",        
+    "pages/boardgame/boardgame",
+    "pages/future/future"
+  ],
+  "window":{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "集合!",
+    "navigationBarTextStyle":"black"
+  }
+}

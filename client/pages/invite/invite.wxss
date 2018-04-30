@@ -1,0 +1,272 @@
+/* pages/calendar/calendar.wxss */
+/* 全屏page */
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.bodyView{
+  display: flex;
+  flex-direction:column;
+  background-color: #F6F6F6;
+  padding: 80rpx;
+} 
+
+/* .teamView{
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Gill Sans';
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color:#F6F6F6;
+  cursor: pointer; 
+  margin-right: 20rpx; 
+  font-size: 80%;
+  border:black solid thin;
+}  */
+
+.teamMateView{
+  width: 100rpx;
+  display: flex;     
+  height: 100rpx;
+  background-color: #F6F6F6; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  margin-right: 1rpx;
+  box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8);          -ms-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -o-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -moz-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -webkit-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8);
+   /* <view class="teamMateView" data-c_e_id="wx_view_3d6933f0">
+      <image src='/pages/basketball/image.png' mode='aspectFill'style='width: 80rpx; height: 80rpx;'></image>
+    </view> */
+}
+
+.titleView{
+  font-size:200%;
+  display:flex;
+  flex-direction:row;
+  margin-bottom:60rpx;
+  justify-content: center;
+}
+.funcInfoView{
+  font-size:100%;
+  margin-top:20rpx;
+  margin-bottom:10rpx;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction:row;
+}
+.locIcon{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: 'Gill Sans';
+  background-color:wheat;
+  cursor: pointer;  
+  font-size: 70%;
+  border:black solid thin;
+}
+.location{
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  margin-bottom:8rpx;
+} 
+
+.locationInputView{
+  background-color:#F6F6F6;
+  /* overflow: hidden; */
+  /* cursor: pointer; 点击效果*/  
+  padding-top: 6rpx;  
+  padding-left: 8rpx;  
+
+  padding-bottom: 6rpx;   
+  margin-right: 10rpx;
+  border:black solid thin;
+  flex-grow: 1;
+  font-size: 70%;
+
+}
+.infoView{
+  font-family: 'Gill Sans';
+  font-size: 60%;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.timeView{
+  align-content: center;  
+  justify-content: center; 
+  background-color: seashell;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  height: 100rpx;
+  box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8);          -ms-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -o-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -moz-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8); -webkit-box-shadow: 0px 0px 3px 3px rgba(171,171,171,0.8);
+}
+.timeTextView{
+font-family: 'Gill Sans';
+  font-size: 80%;
+  font-style: italic;
+  align-content: center;  
+  justify-content: center; 
+  padding:40rpx;
+}
+/*最好弄一个小框*/
+.todayView{  
+  /* border-radius: 50%; */
+  border:goldenrod solid thin;
+  position: relative;
+  left: 0;
+  top: 0;
+  color: #000; 
+}
+.canlendarBgView {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.canlendarView {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gill Sans';
+  border-top: 1rpx solid rgb(100, 100,100);
+  border-bottom: 1rpx solid rgb(100, 100, 100);
+  margin-bottom: 10rpx;
+}
+
+.canlendarTopView {
+  height: 60rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftBgView {
+  text-align: right;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.leftView {
+  width: 80rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerView {
+  width: 50%;
+  height: 80rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightBgView {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.rightView {
+  width: 80rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.weekBgView {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* padding-left: 15px;  */
+  border-top: 1rpx solid rgb(100, 100,100);
+  border-bottom: 1rpx solid rgb(100, 100, 100);
+  margin-bottom: 10rpx;
+}
+
+.weekView {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.dateBgView {
+  height: 350rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dateEmptyView {
+  width: 85.1428571429rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateView {
+  width: 85.1428571429rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datesView {
+  width: 60rpx;
+  height: 60rpx;
+  color: #000; /* #17b7b2 */
+  font-size: 26rpx;
+  font-family: 'Gill Sans';
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inValidDatesView {
+  width: 60rpx;
+  height: 60rpx;
+  opacity: 0.5; 
+  color: #000; /* #17b7b2 */
+  font-size: 26rpx;
+  font-family: 'Gill Sans';
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dateSelectView {
+  border-block-start: 50%; 
+  position: relative;
+  left: 0;
+  top: 0;
+  color: #000;
+  background-color: #17b7b2;
+}
+

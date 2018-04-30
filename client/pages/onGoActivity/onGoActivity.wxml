@@ -1,0 +1,35 @@
+<!--onGoActivity.wxml 个人信息界面-->
+<view class="padding1rem cardWrap" data-c_e_id="wx_view_73b58de5">
+  <view wx:for="{{showList}}"wx:key="{{index}}">
+
+    <view class="c-minheight carditem" data-c_e_id="wx_viewe12b79f9">
+      <view class="paddinghalfrem wx-view_QvvUkU" data-c_e_id="wx_view8102577d">
+        <navigator class="wx-navigator_rv4BGW" data-c_e_id="wx_navigatored15cc54" hover-class="navigator-hover">
+          <view wx:for="{{item}}" wx:key="{{index}}">
+        
+             <scroll-view scroll-x>
+              <scroll-view scroll-y class="memberEle">
+                 <image class="showGender" src="{{item.gender}}.png"></image> 
+                 <image class="showListEle" mode="aspectFill" src='{{item.avatarUrl}}'></image> 
+              <text class="showListNickName">{{item.nickName}}</text>
+              </scroll-view>  
+            </scroll-view>  
+          </view>
+                    <!-- <text class="c-block wx-text_LS2Jup " data-c_e_id="wx_texta062a0ab ">November 5, 1955</text> -->
+            </navigator>
+        </view>
+        <view class="paddinghalfrem wx-view_adF7Mw " data-c_e_id="wx_view8073943b ">
+            <view class="wx-view_2gazUr " data-c_e_id="wx_view1807af72 ">
+                <view class="wx-view_DKe6UT " data-c_e_id="wx_view15415f98 ">
+                    篮球
+                </view>
+                <view class="wx-view_DKe6UT " data-c_e_id="wx_viewf3118f37 ">
+                    有队/单人
+                </view>
+            </view>
+            <text class="c-block wx-text_9Wn0Di " data-c_e_id="wx_text3f7456c5 ">1小时前</text>
+        </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="bodyView">
+  <view class='titleView'>组队活动
+    <image style='width: 90rpx; height: 90rpx;' src='/pages/basketball/ball.png' mode='aspectFill' />
+  </view>
+  <view class="teamView">
+    <!-- 用户首次登录 -->
+    <view class="box">
+      <image class="userinfo-avatar" src="{{sharerAvatarUrl}}" background-size="cover" mode='aspectFill'></image>
+      <text class="userinfo-nickname">{{sharerNickName}}</text>
+    </view>
+    <!-- 用户首次登录 -->
+    <view class='inviteView'>邀请</view>
+
+    <!-- 用户首次登录 -->
+    <view class="box">
+      <image class="userinfo-avatar" src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}" background-size="cover" mode='aspectFill'></image>
+      <text class="userinfo-nickname">{{logged ? userInfo.nickName : ''}}</text>
+    </view>
+    <!-- 用户首次登录 -->
+  </view>
+
+    <view class='funcInfoView'>预计活动时间</view>
+    <scroll-view scroll-y	class="timeView">
+      <text class="timeTextView" wx:for="{{showTime}}">{{item}}\n</text>
+    </scroll-view>
+
+  <view class='funcInfoView'>选择我的出发地</view>
+  <view class='location'>
+    <input class='locationInputView' type="text" name="address" disabled="disabled" value='{{location.address}}' placeholder='请选择您的出发地' bindinput='bindLocationInput' />
+    <button class="locIcon" bindtap="chooseLocation">
+      <image style='width: 30rpx; height: 30rpx;' src='/pages/basketball/map.png' mode='aspectFill' />
+      <text class="loctext">定位</text>
+    </button>
+  </view>
+
+  <view class='infoView'>
+    <text>*系统会参考以上地址为您匹配就近活动场所。</text>
+  </view>
+
+
+  <view class='location'>
+    <button class="locIcon" bindtap='confirmRequest'>
+      <image style='width: 40rpx; height: 40rpx;' src='/pages/basketball/battle.png' mode='aspectFill' /> 确认入队
+    </button>
+  </view>
+  <!-- </form> -->
+</view>

@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<wxs module="tool">
+  var isContain = function(array, index) {
+    if (array.indexOf(index) !== -1) {
+      return true;
+    } else return false;
+  }
+  var isValid = function(pickday, month, year) {
+    var date = getDate();
+    var s = date.toLocaleString().split(',')[0]
+    var cur_year = parseInt(s.split('/')[0])
+    var cur_month = parseInt(s.split('/')[1])
+    var cur_day = parseInt(s.split('/')[2].split(' ')[0])
+
+    if (year > cur_year)
+      return true
+    if (year === cur_year && month > cur_month)
+      return true
+    if (cur_year === year && cur_month === month && pickday >= cur_day)
+      return true
+    return false
+  }
+
+  module.exports.isValid = isValid;
+  module.exports.isContain = isContain;
+</wxs>
+
+<view class="bodyView">
+  <!-- <form bindsubmit="matchRequest"> -->
+    <view class='titleView'>九人局
+      <image style='width: 90rpx; height: 90rpx;' src='/pages/basketball/ball.png' mode='aspectFill' />
+    </view>
+
+    <view class='funcInfoView'>出发地</view>
+
+    <view class='location'>
+      <input class='locationInputView' type="text" name="address" disabled="disabled" value='{{location.address}}' placeholder='请选择您的出发地' bindinput='bindLocationInput'/>
+      <button class="locIcon" bindtap="chooseLocation">
+        <image style='width: 30rpx; height: 30rpx;' src='/pages/basketball/map.png' mode='aspectFill' />
+        <text class="loctext" >定位</text> 
+      </button>
+    </view>
+
+    <view class='infoView'>
+      <text>*系统会参考以上地址匹配就近活动场所。</text>
+    </view>
+
+    <view class='funcInfoView'>空闲时间</view>
+
+    <view class="canlendarBgView">
+      <view class="canlendarView">
+        <view class="canlendarTopView">
+          <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
+            <view class="leftView">《</view>
+          </view>
+          <view class="centerView">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+          <view class="rightBgView" bindtap="handleCalendar" data-handle="next">
+            <view class="rightView">》</view>
+          </view>
+        </view>
+        <view class="weekBgView">
+          <view class="weekView" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+        <view class="dateBgView">
+          <view wx:if="{{hasEmptyGrid}}" class="dateEmptyView" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          </view>
+          <view class="dateView" wx:for="{{days}}" wx:key="{{index}}">
+            <!-- <modal class="modal" hidden="{{modalHidden}}" no-cancel bindconfirm="modalClicked" bindcancel="modalClicked">
+            <view> 没有标题没有取消的对话框 </view>
+            <view> 内容可以插入节点 </view>
+          </modal> -->
+            <view class="datesView {{(todayIndex===index)? 'todayView' : ''}}">
+            <!-- <view bindtap ="modalIfChooseInvaildDate" data-idx="{{index}}" >  </view> -->  
+              <picker disabled="{{tool.isValid(index+1,cur_month,cur_year)===true? '':'true'}}" bindchange="bindPickerChange" value="{{time}}" range="{{pickerTimeFrame}}" class="datesView {{tool.isContain(colorIndex,index+1) ? 'dateSelectView' :(tool.isValid(index+1,cur_month,cur_year)===false) ? 'inValidDatesView' :''}}"
+                data-itm="{{item}}" data-idx="{{index}}">{{item.num}}</picker>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='infoView'>
+      <text>*系统会参考以上空闲时间匹配。</text>
+    </view>
+    <!-- <view class="locationBgView">
+    <form bindsubmit="openLocation">
+      <view class="page-body-form">
+        <text class="page-body-form-key">经度</text>
+        <input class="page-body-form-value" type="text" value="{{location.longitude}}" name="longitude" />
+        <text class="page-body-form-key">维度</text>
+        <input class="page-body-form-value" type="text" value="{{location.latitude}}" name="latitude" />
+      </view>
+      <view class="page-body-buttons">
+        <button class="page-body-button" type="primary" bindtap="getLocation">获取位置</button>
+        <button class="page-body-button" type="primary" formType="submit">查看位置</button>
+        <button class="page-body-button" type="primary" bindtap="chooseLocation">选择位置</button>
+        <text class="page-body-form-key">你在这：</text>
+        <input class="page-body-form-value" type="text" value="{{location.address}}" name="address" />
+      </view>
+    </form>
+  </view>  -->
+    <view class='location'>
+      <button class="locIcon" bindtap='matchRequest'>
+        <image style='width: 40rpx; height: 40rpx;' src='/pages/basketball/battle.png' mode='aspectFill' /> 开始匹配
+      </button>
+    </view>
+  <!-- </form> -->
+</view>
